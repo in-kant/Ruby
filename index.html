@@ -1,0 +1,451 @@
+<html>
+<title>Ruby mobile</title>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<script language="JavaScript" type="text/javascript">
+
+   function fillvalues()
+    {
+   rrefH = 6;
+   rrefT = 9;
+   rrefU = 4;
+   rrefdt = 2;
+   rrefdh = 2;
+   rmesH = 6;
+   rmesT = 9;
+   rmesU = 4;
+   rmesdt = 2;
+   rmesdh = 2;
+   tTh = 0;
+   tH = 2;
+   tT = 9;
+   tU = 8;
+   B=7.665;
+   scrw = window.innerWidth
+   leftmarg = (scrw - 240)/2
+   document.body.style.margin = "20px 0px 0px " + leftmarg + "px";
+   }
+
+
+    function refrubadj1(inc)
+     {
+       rrefH = rrefH + inc
+	     if (rrefH == 10)
+        	   rrefH = 0;
+	     if (rrefH == -1)
+        	   rrefH = 9;
+       document.getElementById("ref1").innerHTML = rrefH
+	calc_P()
+     }
+
+    function refrubadj2(inc)
+     {
+       rrefT = rrefT + inc
+	     if (rrefT == 10)
+        	   rrefT = 0;
+	     if (rrefT == -1)
+        	   rrefT = 9;
+       document.getElementById("ref2").innerHTML = rrefT
+	calc_P()
+     }
+    function refrubadj3(inc)
+     {
+       rrefU = rrefU + inc
+	     if (rrefU == 10)
+        	   rrefU = 0;
+	     if (rrefU == -1)
+        	   rrefU = 9;
+       document.getElementById("ref3").innerHTML = rrefU
+	calc_P()
+     }
+    function refrubadj4(inc)
+     {
+       rrefdt = rrefdt + inc
+	     if (rrefdt == 10)
+        	   rrefdt = 0;
+	     if (rrefdt == -1)
+        	   rrefdt = 9;
+       document.getElementById("ref4").innerHTML = rrefdt
+	calc_P()
+     }
+    function refrubadj5(inc)
+     {
+       rrefdh = rrefdh + inc
+	     if (rrefdh == 10)
+        	   rrefdh = 0;
+	     if (rrefdh == -1)
+        	   rrefdh = 9;
+       document.getElementById("ref5").innerHTML = rrefdh
+	calc_P()
+     }
+
+    function mesrubadj1(inc)
+	{
+	rmesH = rmesH + inc
+	     if (rmesH == 10)
+		rmesH = 0;
+	     if (rmesH == -1)
+		rmesH = 9;
+          document.getElementById("rm1").innerHTML = rmesH
+	  calc_P()
+        }
+
+    function mesrubadj2(inc)
+	{
+	rmesT = rmesT + inc
+	     if (rmesT == 10)
+		rmesT = 0;
+	     if (rmesT == -1)
+		rmesT = 9;
+          document.getElementById("rm2").innerHTML = rmesT
+	  calc_P()
+        }
+
+    function mesrubadj3(inc)
+	{
+	rmesU = rmesU + inc
+	     if (rmesU == 10)
+		rmesU = 0;
+	     if (rmesU == -1)
+		rmesU = 9;
+          document.getElementById("rm3").innerHTML = rmesU
+	  calc_P()
+        }
+
+    function mesrubadj4(inc)
+	{
+	rmesdt = rmesdt + inc
+	     if (rmesdt == 10)
+		rmesdt = 0;
+	     if (rmesdt == -1)
+		rmesdt = 9;
+          document.getElementById("rm4").innerHTML = rmesdt
+	  calc_P()
+        }
+
+    function mesrubadj5(inc)
+	{
+	rmesdh = rmesdh + inc
+	     if (rmesdh == 10)
+		rmesdh = 0;
+	     if (rmesdh == -1)
+		rmesdh = 9;
+          document.getElementById("rm5").innerHTML = rmesdh
+	  calc_P()
+        }
+
+    function tchange1(inc)
+        {
+         tTh = tTh + inc
+	     if (tTh == 10)
+		tTh = 0;
+	     if (tTh == -1)
+		tTh = 9;
+          document.getElementById("tt1").innerHTML = tTh
+	  calc_P()
+        }
+
+    function tchange2(inc)
+        {
+         tH = tH + inc
+	     if (tH == 10)
+		tH = 0;
+	     if (tH == -1)
+		tH = 9;
+          document.getElementById("tt2").innerHTML = tH
+	  calc_P()
+        }
+
+    function tchange3(inc)
+        {
+         tT = tT + inc
+	     if (tT == 10)
+		tT = 0;
+	     if (tT == -1)
+		tT = 9;
+          document.getElementById("tt3").innerHTML = tT
+	  calc_P()
+        }
+
+    function tchange4(inc)
+        {
+         tU = tU + inc
+	     if (tU == 10)
+		tU = 0;
+	     if (tU == -1)
+		tU = 9;
+          document.getElementById("tt4").innerHTML = tU
+	  calc_P()
+        }
+
+    function nonh_select()
+     {
+       B = 5;
+       document.getElementById("radio_nh").src = "radio_on_big.png";
+       document.getElementById("radio_h").src = "radio_off_big.png";
+	calc_P()   
+     }
+
+    function h_select()
+     {
+       B=7.665;
+       document.getElementById("radio_nh").src = "radio_off_big.png";
+       document.getElementById("radio_h").src = "radio_on_big.png";   
+	calc_P()
+     }
+    function calc_P()
+         {
+        lam0 = eval((rrefH*100) + (rrefT*10) + rrefU + (rrefdt/10) + (rrefdh/100));
+	lam = eval((rmesH*100) + (rmesT*10) + rmesU + (rmesdt/10) + (rmesdh/100));
+        A=1904
+        k=0.46299
+        l=0.0060823
+        m=0.0000010264	
+        reftemp=298
+        temp= eval((tTh*1000) + (tH*100) + (tT*10) + tU);
+
+        Acorr=eval(A + (k*(temp - reftemp)))
+        lam0corr=eval(lam0 + (l*(temp - reftemp)) + (m*((temp - reftemp)*(temp - reftemp))))
+        rat=eval(Math.pow((lam/lam0corr),B))
+        P=eval((Acorr/B)*rat - (Acorr/B))
+        P=P*100
+        P=Math.round(P)
+        P=P/100
+        document.getElementById("p_output").innerHTML = "P = " + P + " GPa";
+         }
+
+  </script>
+</head>
+
+<body onload="fillvalues()" id="fullbody">
+
+<table border="0" cellpadding="1" cellspacing="0" width="240">
+
+<tr>
+
+<td align="left" width="30px">
+<div class="radiotext"><img src="radio_on_big.png" width="25px" height="25px" id="radio_h" onclick="h_select()"></div>
+</td>
+<td align="left">
+<div class="radiotext" onclick="h_select()">Hydrostatic</div>
+</td>
+
+</tr>
+
+<tr>
+
+<td align="left" width="30px">
+<div class="radiotext"><img src="radio_off_big.png" width="25px" height="25px" id="radio_nh" onclick="nonh_select()"></div>
+</td>
+<td align="left">
+<div class="radiotext" onclick="nonh_select()">Non-hydrostatic</div>
+</td>
+</tr>
+</table>
+<image src="line.gif" width="240" height="5">
+<br>
+Reference ruby (P = 0 T = 298):
+<br>
+<table border="0" cellpadding="1" cellspacing="0" width="240">
+
+<tr>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj1(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj2(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj3(1)">+</div>
+</td>
+<td align="center" width="5px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj4(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj5(1)">+</div>
+</td>
+</tr>
+
+
+<tr>
+<td align="center" width="47px">
+<div class ="label" id="ref1">6</div>
+</td>                       
+<td align="center" width="47px">
+<div class="label" id="ref2">9</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="ref3">4</div>
+</td>
+<td align="center" width="5px">
+<div class="label">.</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="ref4">2</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="ref5">2</div>
+</td>
+</tr>
+
+
+
+<tr>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj1(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj2(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj3(-1)">-</div>
+</td>
+<td align="center" width="5px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj4(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="refrubadj5(-1)">-</div>
+</td>
+</tr>
+</table>
+<image src="line.gif" width="240" height="5">
+<br>
+
+Measured value:
+<br>
+
+<table border="0" cellpadding="1" cellspacing="0" width="240">
+
+<tr>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj1(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj2(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj3(1)">+</div>
+</td>
+<td align="center" width="5px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj4(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj5(1)">+</div>
+</td>
+</tr>
+
+
+<tr>
+<td align="center" width="47px">
+<div class="label" id="rm1">6</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="rm2">9</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="rm3">4</div>
+</td>
+<td align="center" width="5px">
+<div class="label">.</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="rm4">2</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="rm5">2</div>
+</td>
+</tr>
+
+
+
+<tr>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj1(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj2(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj3(-1)">-</div>
+</td>
+<td align="center" width="5px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj4(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="mesrubadj5(-1)">-</div>
+</td>
+</tr>
+</table>
+<image src="line.gif" width="240" height="5">
+<br>
+<div class="pressure" id="p_output">P = 0 GPa</div>
+<image src="line.gif" width="240" height="5">
+<br>
+
+<table border="0" cellpadding="1" cellspacing="0" width="240">
+
+<tr>
+<td align="center" width="99px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange1(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange2(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange3(1)">+</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange4(1)">+</div>
+</td>
+</tr>
+
+<tr>
+<td align="center" width="99px">
+<b>T (K) =</b>
+</td>
+<td align="center" width="47px">
+<div class="label" id="tt1">0</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="tt2">2</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="tt3">9</div>
+</td>
+<td align="center" width="47px">
+<div class="label" id="tt4">8</div>
+</td>
+</tr>
+
+<tr>
+<td align="center" width="99px">
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange1(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange2(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange3(-1)">-</div>
+</td>
+<td align="center" width="47px">
+<div class="button" onclick="tchange4(-1)">-</div>
+</td>
+</tr>
+
+</table>
+</body>
+
+</html>
